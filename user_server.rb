@@ -5,7 +5,7 @@ require 'thread'
 require 'timeout'
 
 TCPServer.open USER_SERVER_PORT do |server|
-  print "\t" + USER_SERVER_NAME
+  puts "\t" + USER_SERVER_NAME
   loop do
     begin
       sock = server.accept

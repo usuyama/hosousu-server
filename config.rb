@@ -24,7 +24,10 @@ Thread.abort_on_exception = true
 
 =begin
 #困っていること
-thread内での例外が何も言わないで消える...。
+thread内での例外が何も言わないで消える...。時がある？？？
+class Socket
+  def print
+    でoverrideできない。
 
 #todo
 例外処理。

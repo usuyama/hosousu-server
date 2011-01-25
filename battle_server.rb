@@ -22,21 +22,14 @@ class BattleServer
   end
 
   def start
-    p "battle server start"
     Thread.new do
       loop do
         u1 = @user_queue.pop
-        p "pop"
-        p u1
         u2 = @user_queue.pop
-        p "pop"
-        p u2
         Thread.new do
           user_pair = UserPair.new u1, u2
-          p "pair そろった"
           user_pair.send_opponent_info
           user_pair.recv_ok
-          p "call send problem"
           user_pair.send_problem_set @mode
           user_pair.recv_ok
           user_pair.send_start
@@ -44,7 +37,6 @@ class BattleServer
           user_pair.game_end
           user_pair.recv_ok
           user_pair.close_socket
-          p "battlse server end"
         end
       end
     end
@@ -53,10 +45,10 @@ end
 
 servers = { :easy => BattleServer.new(:easy), :normal => BattleServer.new(:normal), :hard => BattleServer.new(:hard) }
 TCPServer.open BATTLE_SERVER_PORT do |server|
-  p "\t" + BATTLE_SERVER_NAME
+  puts "\t" + BATTLE_SERVER_NAME
   loop do
     sock = server.accept
-    log "sock accept"
+    puts "sock accept"
     buf = sock.recv RECV_MAX
     user_prof = buf.split ','
     p user_prof

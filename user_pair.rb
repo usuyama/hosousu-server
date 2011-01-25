@@ -1,7 +1,7 @@
 class UserPair
   attr_accessor :winner
+
   def initialize(us1, us2)
-    p "init userpair"
     @user1 = us1[:user]
     @user2 = us2[:user]
     @sock1 = us1[:socket]
@@ -9,11 +9,9 @@ class UserPair
     @winner = nil
     @user1.init self, @sock1
     @user2.init self, @sock2
-    p "init userpair end"
   end
 
   def opponent(user)
-    p "def opponent"
     if @user1.object_id == user.object_id
       @user2
     else
@@ -22,7 +20,7 @@ class UserPair
   end
 
   def send_opponent_info
-    p "opponent info"
+    p "send opponent info"
     @sock1.printf "%04d,%s", @user2.rate, @user2.name
     @sock2.printf "%04d,%s", @user1.rate, @user1.name
   end
@@ -39,7 +37,6 @@ class UserPair
   end
 
   def send_problem_set mode
-    p "problem send"
     @problem_set = generate_problem mode, PROBLEM_COUNT
     p "problem send"
     p @problem_set
@@ -50,19 +47,29 @@ class UserPair
     self.print_both "start"
   end
 
+  def gen_thread_for_pipe(user1, user2) #user1 -> user2
+    user1.pipe_thread = Thread.new do
+      while !@winner && (l = user1.socket.recv 6)
+        user1.messages.push l
+        if l =~ /next(\d+)/
+          user2.socket.print l
+        elsif l == "finish"
+          if @winner.nil?
+            @winner = user1
+          end
+          #kill thread because of passing block-recv
+          user2.pipe_thread.kill
+          Thread.exit
+        end
+      end
+    end
+  end
+
   def game_start
-    p "game start"
-    @user1.gen_thread_for_push_message_for_opponent
-    @user2.gen_thread_for_push_message_for_opponent
-    p "gen_push_thread"
-    th_pop_user1 = @user1.gen_thread_for_pop_message
-    th_pop_user2 = @user2.gen_thread_for_pop_message
-    p "gen pop thread"
-    @user1.thread_for_push_message.join
-    @user2.thread_for_push_message.join
-    p "kill"
-    th_pop_user1.kill
-    th_pop_user2.kill
+    t1 = gen_thread_for_pipe @user1, @user2
+    t2 = gen_thread_for_pipe @user2, @user1
+    t1.join
+    t2.join
   end
 
   def loser
@@ -72,7 +79,6 @@ class UserPair
   def game_end
     p "game_end"
     @winner.socket.printf "w_%04d", @winner.score
-    p "winner"
     self.loser.socket.printf "l_%04d", self.loser.score
   end
 
