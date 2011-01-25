@@ -4,7 +4,7 @@
 require "socket"
 
 sock = TCPSocket.open("webbie.bz", 31411)
-sock.print "1,easy"
+sock.print "2,easy"
 p sock.recv 512
 sock.print "ok"
 p sock.recv 512
