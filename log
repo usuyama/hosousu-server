@@ -1,23 +1,464 @@
-# Logfile created on Tue Jan 25 17:23:13 +0900 2011 by /
-D, [2011-01-25T17:23:14.006664 #14793] DEBUG -- :   [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+# Logfile created on Tue Jan 25 20:17:12 +0900 2011 by /
+D, [2011-01-25T20:17:12.936299 #25085] DEBUG -- :   [1m[36mSQL (0.7ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
-D, [2011-01-25T17:23:14.008674 #14793] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  select sqlite_version(*)
-D, [2011-01-25T17:23:14.015850 #14793] DEBUG -- :   [1m[36mSQL (5.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "device_id" varchar(255), "name" varchar(255), "highscore" integer, "rate" integer) [0m
-D, [2011-01-25T17:29:30.530994 #15195] DEBUG -- :   [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+D, [2011-01-25T20:17:12.938006 #25085] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  select sqlite_version(*)
+D, [2011-01-25T20:17:12.947908 #25085] DEBUG -- :   [1m[36mSQL (8.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "device_id" varchar(255), "name" varchar(255), "highscore" integer, "rate" integer) [0m
+D, [2011-01-25T20:23:23.087990 #26449] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
-D, [2011-01-25T17:29:48.040526 #15207] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+D, [2011-01-25T20:23:23.204099 #26449] DEBUG -- :   [1m[35mAREL (26.3ms)[0m  INSERT INTO "users" ("device_id", "rate", "name", "highscore") VALUES (NULL, NULL, 'aaa', NULL)
+D, [2011-01-25T20:24:36.988047 #26647] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
-D, [2011-01-25T17:29:48.062117 #15207] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
-D, [2011-01-25T17:29:54.426950 #15207] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'usuyama') LIMIT 1[0m
-D, [2011-01-25T17:29:59.952850 #15207] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
-D, [2011-01-25T17:30:05.885901 #15207] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'usuyama') LIMIT 1[0m
-D, [2011-01-25T17:30:05.912925 #15207] DEBUG -- :   [1m[35mAREL (0.6ms)[0m  INSERT INTO "users" ("highscore", "device_id", "rate", "name") VALUES (NULL, NULL, NULL, 'usuyama')
-D, [2011-01-25T17:30:09.290721 #15207] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
-D, [2011-01-25T17:30:09.293972 #15207] DEBUG -- :   [1m[35mAREL (0.5ms)[0m  UPDATE "users" SET "name" = 'hosokawa' WHERE ("users"."id" = 1)
-D, [2011-01-25T17:30:11.389941 #15207] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'usuyama') LIMIT 1[0m
+D, [2011-01-25T20:24:37.051558 #26647] DEBUG -- :   [1m[35mAREL (0.9ms)[0m  INSERT INTO "users" ("highscore", "device_id", "rate", "name") VALUES (NULL, NULL, NULL, 'aaa')
+D, [2011-01-25T20:25:12.125572 #26767] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:25:12.183808 #26767] DEBUG -- :   [1m[35mAREL (0.6ms)[0m  INSERT INTO "users" ("name", "device_id", "rate", "highscore") VALUES ('aaa', NULL, NULL, NULL)
+D, [2011-01-25T20:25:55.161007 #26910] DEBUG -- :   [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:25:55.228299 #26910] DEBUG -- :   [1m[35mAREL (0.7ms)[0m  INSERT INTO "users" ("device_id", "name", "highscore", "rate") VALUES (NULL, 'aaa', NULL, NULL)
+D, [2011-01-25T20:26:22.725630 #26949] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:26:22.748326 #26949] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'unkounko') LIMIT 1
+D, [2011-01-25T20:26:22.775307 #26949] DEBUG -- :   [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "device_id", "rate", "highscore") VALUES ('unkounko', NULL, NULL, NULL)[0m
+D, [2011-01-25T20:26:32.724544 #26949] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 5) LIMIT 1
+D, [2011-01-25T20:26:32.727690 #26949] DEBUG -- :   [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "name" = '(no-name)' WHERE ("users"."id" = 5)[0m
+D, [2011-01-25T20:27:02.734498 #26949] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+D, [2011-01-25T20:27:42.374742 #26949] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+D, [2011-01-25T20:36:39.471484 #27597] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:36:39.493092 #27597] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'usuyama') LIMIT 1
+D, [2011-01-25T20:36:39.520374 #27597] DEBUG -- :   [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "users" ("rate", "highscore", "name", "device_id") VALUES (NULL, NULL, 'usuyama', NULL)[0m
+D, [2011-01-25T20:36:43.613213 #27597] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T20:36:43.616359 #27597] DEBUG -- :   [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "name" = 'hosokawa' WHERE ("users"."id" = 1)[0m
+D, [2011-01-25T20:36:53.501737 #27597] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T20:36:53.504621 #27597] DEBUG -- :   [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "name" = 'ububu' WHERE ("users"."id" = 1)[0m
+D, [2011-01-25T20:37:05.336234 #27597] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+D, [2011-01-25T20:37:27.122970 #27597] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+D, [2011-01-25T20:37:28.662588 #27597] DEBUG -- :   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+D, [2011-01-25T20:39:42.219178 #27597] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'uho') LIMIT 1[0m
+D, [2011-01-25T20:39:42.223264 #27597] DEBUG -- :   [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("rate", "highscore", "name", "device_id") VALUES (NULL, NULL, 'uho', NULL)
+D, [2011-01-25T20:39:54.218568 #27597] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T20:39:54.221496 #27597] DEBUG -- :   [1m[35mAREL (0.5ms)[0m  UPDATE "users" SET "name" = '(no-name)' WHERE ("users"."id" = 7)
+D, [2011-01-25T20:40:15.515488 #27597] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T20:40:15.518403 #27597] DEBUG -- :   [1m[35mAREL (0.4ms)[0m  UPDATE "users" SET "name" = 'uhaha' WHERE ("users"."id" = 7)
+D, [2011-01-25T20:43:53.948877 #27766] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:43:53.970922 #27766] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T20:44:01.270440 #27766] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T20:49:51.676002 #27894] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:49:51.698361 #27894] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T20:49:54.630772 #27894] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T20:50:48.654393 #27913] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:50:48.676612 #27913] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T20:50:55.597810 #27913] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T20:51:41.126100 #27933] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T20:51:41.148309 #27933] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T20:51:43.321850 #27933] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:20:33.810794 #27933] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:20:44.858902 #28202] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:20:44.881732 #28202] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:20:59.990546 #28202] DEBUG -- :   [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:21:47.761561 #28233] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:21:47.783544 #28233] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:21:50.831828 #28233] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:22:28.730180 #28252] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:22:28.752350 #28252] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:22:31.797049 #28252] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:24:07.807063 #28278] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:24:07.829357 #28278] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:24:10.836230 #28278] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:26:05.108662 #28310] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:26:05.131494 #28310] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:26:08.721730 #28310] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:29:04.419971 #28342] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:29:04.442131 #28342] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:29:07.400892 #28342] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:30:02.689018 #28361] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:30:02.712012 #28361] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:30:06.170145 #28361] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:31:02.907845 #28415] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:31:02.930205 #28415] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:31:06.815420 #28415] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:33:03.139023 #28453] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:33:03.160872 #28453] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:33:14.151795 #28453] DEBUG -- :   [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:34:36.742923 #28482] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:34:36.765187 #28482] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:34:40.933816 #28482] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:36:22.395620 #28542] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:36:22.418012 #28542] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:36:24.200833 #28542] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:37:05.476182 #28561] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:37:05.499143 #28561] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:37:07.294774 #28561] DEBUG -- :   [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:38:06.172551 #28580] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:38:06.195190 #28580] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:38:08.943462 #28580] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:39:19.452508 #28613] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:39:19.476797 #28613] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:39:22.055579 #28613] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:40:15.312518 #28649] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:40:15.335301 #28649] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:40:17.509347 #28649] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:41:22.335848 #28672] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:41:22.358425 #28672] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:41:24.116017 #28672] DEBUG -- :   [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:43:23.258729 #28697] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:43:23.281696 #28697] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:43:26.580399 #28697] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:44:49.656737 #28724] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:44:49.679118 #28724] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:44:52.096367 #28724] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:46:09.593057 #28762] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:46:09.629460 #28762] DEBUG -- :   [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:46:12.711293 #28762] DEBUG -- :   [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:46:48.547591 #28775] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:46:48.570422 #28775] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:46:51.282276 #28775] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:47:54.882442 #28798] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:47:54.905440 #28798] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:47:56.908694 #28798] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:48:30.121844 #28821] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:48:30.143857 #28821] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:48:32.134990 #28821] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:49:05.609745 #28840] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:49:05.632564 #28840] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:49:07.410487 #28840] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:50:46.461257 #28863] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:50:46.483093 #28863] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:50:50.429337 #28863] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:53:03.902290 #28892] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:53:03.924314 #28892] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T21:53:06.385216 #28892] DEBUG -- :   [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T21:58:32.125410 #28961] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:58:32.150096 #28961] DEBUG -- :   [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:58:39.834551 #28961] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T21:59:17.818724 #28984] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T21:59:17.841918 #28984] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T21:59:21.225032 #28984] DEBUG -- :   [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T22:01:08.251582 #29020] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:01:08.273842 #29020] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T22:01:11.186331 #29020] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T22:10:26.743199 #27597] DEBUG -- :   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."name" = 'aiueo') LIMIT 1[0m
+D, [2011-01-25T22:10:26.746894 #27597] DEBUG -- :   [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("rate", "highscore", "name", "device_id") VALUES (NULL, NULL, 'aiueo', NULL)
+D, [2011-01-25T22:21:45.048771 #29245] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:21:45.071031 #29245] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T22:25:17.253057 #29449] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:25:17.275677 #29449] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T22:31:35.389168 #29535] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:31:35.411398 #29535] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T22:32:43.979268 #27597] DEBUG -- :   [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+D, [2011-01-25T22:32:43.982198 #27597] DEBUG -- :   [1m[35mAREL (0.4ms)[0m  UPDATE "users" SET "name" = 'usuyamanaoto' WHERE ("users"."id" = 8)
+D, [2011-01-25T22:32:59.045363 #29555] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:32:59.068276 #29555] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T22:33:01.882426 #29555] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T22:35:40.369173 #29618] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:35:40.393240 #29618] DEBUG -- :   [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T22:35:42.877373 #29618] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T22:37:28.823475 #29643] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:37:28.846026 #29643] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T22:37:41.274122 #29643] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+D, [2011-01-25T22:39:27.478657 #29687] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:39:27.504947 #29687] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T22:39:28.498151 #29687] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T22:41:20.104765 #29687] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T22:41:47.362051 #29785] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:41:47.383949 #29785] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T22:41:52.472516 #29785] DEBUG -- :   [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T22:47:52.248144 #29849] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:47:52.270325 #29849] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T22:47:52.418730 #29849] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T22:56:45.133516 #29918] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:56:45.155766 #29918] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T22:56:47.907887 #29918] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T22:57:50.932825 #29937] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:57:50.959063 #29937] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T22:57:54.079674 #29937] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T22:58:46.455616 #29956] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T22:58:46.477648 #29956] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T22:59:05.181663 #29956] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T23:03:47.430480 #30010] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:03:47.454241 #30010] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:03:50.500587 #30010] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:04:57.039326 #30029] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:04:57.061686 #30029] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T23:05:04.016789 #30029] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T23:08:44.691306 #30108] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:08:44.714245 #30108] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:08:50.725155 #30108] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:17:13.961042 #30229] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:17:13.984271 #30229] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:17:17.601908 #30229] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:18:42.042102 #30248] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:18:42.064305 #30248] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:18:44.759419 #30248] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:23:48.003628 #30291] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:23:48.026092 #30291] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:23:50.350114 #30291] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:25:07.026381 #30314] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:25:07.048734 #30314] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:25:10.545500 #30314] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:25:25.707844 #30331] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:25:25.729903 #30331] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:25:27.594189 #30331] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:27:06.215900 #30358] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:27:06.238404 #30358] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:27:08.487817 #30358] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:28:22.147054 #30383] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:28:22.169724 #30383] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:28:24.611041 #30383] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:28:34.365382 #30396] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:28:34.389019 #30396] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:28:36.798829 #30396] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:32:16.177553 #30409] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:32:16.199603 #30409] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T23:32:16.556105 #30409] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+D, [2011-01-25T23:34:00.158350 #30467] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:34:00.181247 #30467] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+D, [2011-01-25T23:34:08.742718 #30467] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+D, [2011-01-25T23:36:32.130359 #30494] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:36:32.152731 #30494] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T23:36:40.460709 #30494] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+D, [2011-01-25T23:39:38.514285 #30599] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:39:38.537009 #30599] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:39:40.971251 #30599] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:40:01.404928 #30612] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:40:01.426893 #30612] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:40:03.532729 #30612] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:40:09.058958 #30612] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:40:11.617712 #30612] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:40:43.035634 #30648] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:40:43.057816 #30648] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-25T23:40:44.910425 #30648] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-25T23:49:35.967441 #30761] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:49:35.989346 #30761] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'usuyama') LIMIT 1
+D, [2011-01-25T23:49:42.104450 #30761] DEBUG -- :   [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:49:45.916215 #30761] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'usuyama') LIMIT 1
+D, [2011-01-25T23:52:04.782841 #30805] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:52:04.804968 #30805] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-25T23:52:06.605142 #30805] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-25T23:52:15.758736 #30824] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-25T23:52:15.780633 #30824] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 7) LIMIT 1
+D, [2011-01-25T23:52:20.791593 #30824] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+D, [2011-01-26T00:06:19.623314 #31062] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+D, [2011-01-26T00:06:19.645441 #31062] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-26T00:06:21.677519 #31062] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-26T00:06:25.258107 #31062] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-26T00:06:27.794380 #31062] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-26T00:06:30.527336 #31062] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-26T00:06:32.462190 #31062] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-26T00:06:34.292992 #31062] DEBUG -- :   [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-26T00:06:36.188559 #31062] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-26T00:06:38.457366 #31062] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-26T00:06:40.397610 #31062] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+D, [2011-01-26T00:06:42.078360 #31062] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+D, [2011-01-26T00:06:44.402014 #31062] DEBUG -- :   [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+D, [2011-01-26T00:06:45.773562 #31062] DEBUG -- :   [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+D, [2011-01-26T00:06:50.096997 #31062] DEBUG -- :   [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m

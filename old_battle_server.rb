@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-
 require 'benchmark'
 require 'socket'
 require 'prob.rb'

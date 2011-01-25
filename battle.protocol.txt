@@ -1,0 +1,17 @@
+battle server : port 31411
+
+connect
+(s << c) id,easy(もしくは、normal,hard)
+そろったら
+(s >> c)相手の名前,rate
+(s << c)ok
+(s >> c)問題セット
+(s << c)ok
+(c >> s)start
+next,missなど送り合う
+解きおわったら
+(c << s)finish
+(s >> c)win_(4桁のスコア)もしくはlose(4桁のスコア)
+(s << c)ok
+5秒でタイムアウトする
+

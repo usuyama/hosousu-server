@@ -1,7 +1,3 @@
-def log(s)
-  p s
-end
-
 def generate_problem(mode, n)
   buf = ""
   n.times do
