@@ -5,56 +5,60 @@ require 'thread'
 require 'timeout'
 
 TCPServer.open USER_SERVER_PORT do |server|
-  log "\t" + USER_SERVER_NAME
+  print "\t" + USER_SERVER_NAME
   loop do
-    sock = server.accept
-    log "sock accept"
-    message = sock.recv RECV_MAX
-    data = message.split ','
-    case data.first.to_sym
-    when :register
-      if User.find_by_name data[1]
-        sock.print "already_taken"
-      else
-        if user = (User.create :name => data[1])
-          sock.print "ok," + format("%05d", user.id)
+    begin
+      sock = server.accept
+      log "###sock accept"
+      message = sock.recv RECV_MAX
+      data = message.split ','
+      log data
+      case data.first.to_sym
+      when :register
+        if User.find_by_name data[1]
+          sock.print "already_taken"
         else
-          sock.print "fail"
+          if user = (User.create :name => data[1])
+            sock.print "ok," + format("%05d", user.id)
+          else
+            sock.print "fail"
+          end
         end
-      end
-    when :change_name
-      if user = (User.find_by_id data[1])
-        user.update_attribute :name, data[2]
-        sock.print "ok"
+      when :change_name
+        if user = (User.find_by_id data[1])
+          user.update_attribute :name, data[2]
+          sock.print "ok"
+        else
+          sock.print "unknown_id"
+        end
+      when :find_by_id
+        if user = (User.find_by_id data[1])
+          sock.print "ok," + user.pack
+        else
+          sock.print "unknown_id"
+        end
+      when :find_by_name
+        if user = (User.find_by_name data[1])
+          sock.print "ok," + user.pack
+        else
+          sock.print "unknown_name"
+        end
+      when :set_score
+        if user = (User.find_by_id data[1]) && user.highscore < data[2].to_i
+          user.update_attribute :highscore, data[2]
+          sock.print "ok"
+        else
+          sock.print "unknown_id"
+        end
       else
-        sock.print "unknown_id"
+        sock.print "unsupported_protocol"
       end
-    when :find_by_id
-      if user = (User.find_by_id data[1])
-        sock.print "ok," + user.pack
-      else
-        sock.print "unknown_id"
-      end
-    when :find_by_name
-      if user = (User.find_by_name data[1])
-        sock.print "ok," + user.pack
-      else
-        sock.print "unknown_name"
-      end
-    when :set_score
-      if user = (User.find_by_id data[1]) && user.highscore < data[2].to_i
-        user.update_attribute :highscore, data[2]
-        sock.print "ok"
-      else
-        sock.print "unknown_id"
-      end
-    else
-      sock.print "unsupported_protocol"
-    end
-    timeout 5 do
       sock.recv 2
+    rescue => exc
+      p exc
+    ensure
+      sock.close
+      log "###sock close"
     end
-    sock.close
-    log "sock close"
   end
 end
